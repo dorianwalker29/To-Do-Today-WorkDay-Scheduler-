@@ -51,18 +51,18 @@ body {
   }
   
   .present {
-    background-color: #ff6961;
+    background-color: #fc5249;
   }
   
   .future {
-    background-color: #77dd77;
+    background-color: #2aa42a;
   }
   
   .saveBtn {
     border: none;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: #06AED5;
+    background-color: #1acbf3;
     color: white;
     width: 100%;
     height: 100%;
