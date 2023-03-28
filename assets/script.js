@@ -18,7 +18,8 @@ class TimeblockObj {
       });
     setTimeblockText(currentTimeblocks);
   };
-  
+  //displaying the date and time on upload of page
+
   function getCurrentTimeblocks() {
     const currentTimeblocks = localStorage.getItem('timeblockObjects');
     return currentTimeblocks ? JSON.parse(currentTimeblocks) : [];
@@ -29,10 +30,11 @@ class TimeblockObj {
       .textContent = currentTime.format('dddd, MMMM Do');
   }
   
-  /*** functions for displaying all timeblock rows ***/
+  // functions for displaying all timeblock rows. this saves initial lines of code in the html
+
   function displayTimeblockRows(currentTime) {
     const currentHour = currentTime.hour();
-    //working hours are 9-5 or 9-17
+    //working hours are 9-5 or 9-17(military time)
     for (let i = 9; i <= 17; i ++) {
       const timeblock = createTimeblockRow(i);
       const hourCol = createCol(createHourDiv(i), 1);
@@ -96,7 +98,7 @@ class TimeblockObj {
     }
   }
   
-  /*** functions for saving to local storage ***/
+  // functions for saving to local storage. does not erase on reload
   function containerClicked(event, timeblockList) {
     if (isSaveButton(event)) {
       const timeblockHour = getTimeblockHour(event);
